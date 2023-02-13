@@ -4,14 +4,11 @@ import { IProvider, IBlockTransactions, OnNewBlockFn, ITransaction } from "./typ
 import { getNullTransactionText } from "./utils";
 
 export class EvmProvider implements IProvider {
-  private rpcUrl: string;
   private provider: ethers.providers.JsonRpcProvider;
   private onNewBlockFn: OnNewBlockFn | undefined;
 
-  constructor() {
-    this.rpcUrl = "https://rpc.ankr.com/avalanche";
-    // this.rpcUrl = "https://avalanche-mainnet.infura.io/v3/1ec00a3205f14397a8c259f2e0b908df";
-    this.provider = new ethers.providers.JsonRpcProvider(this.rpcUrl);
+  constructor(rpcUrl: string) {
+    this.provider = new ethers.providers.JsonRpcProvider(rpcUrl);
   }
 
   onNewBlock(fn: OnNewBlockFn) {

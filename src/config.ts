@@ -6,6 +6,10 @@ function parseBoolean(value: string | undefined) {
 
 export const config = Object.freeze({
   port: Number(env.PORT || 3001),
+  provider: {
+    http: env.PROVIDER_HTTP_URL,
+    wss: env.PROVIDER_WSS_URL,
+  },
   scheduler: {
     enable: parseBoolean(env.SCHEDULER_ENABLE),
     syncRule: env.SCHEDULER_SYNC_RULE || `*/5 * * * * *`,
@@ -28,9 +32,10 @@ export const config = Object.freeze({
 function checkConfig(config: object) {
   const entries = Object.entries(config);
   for (const entry of entries) {
+    const key = entry[0];
     const value = entry[1];
     if (value === undefined) {
-      throw new Error(`Please set your ${entry[0]} in a .env file`);
+      throw new Error(`Please set your '${key}' in a .env file`);
     } else if (typeof value === "object") {
       checkConfig(value);
     }

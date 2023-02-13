@@ -93,24 +93,6 @@
 			"response": []
 		},
 		{
-			"name": "/transactions/top-values",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{srvUrl}}/transactions/top-values",
-					"host": [
-						"{{srvUrl}}"
-					],
-					"path": [
-						"transactions",
-						"top-values"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "/transactions/:id/count",
 			"request": {
 				"method": "GET",
@@ -124,6 +106,24 @@
 						"transactions",
 						"0xa4cee7d1af6adddd33e3b1cc680ab84fdf1b6d1d",
 						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/transactions/top-values",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{srvUrl}}/transactions/top-values",
+					"host": [
+						"{{srvUrl}}"
+					],
+					"path": [
+						"transactions",
+						"top-values"
 					]
 				}
 			},

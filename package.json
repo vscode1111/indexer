@@ -4,7 +4,7 @@
   "description": "blockchain indexer service",
   "scripts": {
     "commit": "git-cz",
-    "dev": "env-cmd -f .env nodemon src/index.ts",
+    "dev": "env-cmd -f .env.dev nodemon src/index.ts",
     "format": "prettier --config ./.prettierrc.yml --write \"src/**/*.ts\"",
     "build": "rimraf dist && tsc",
     "start": "env-cmd -f .env node dist/index.js",

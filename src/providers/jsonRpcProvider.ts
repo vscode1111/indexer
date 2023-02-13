@@ -16,15 +16,10 @@ function getRequestBody(method: string, params: string[] = []) {
 }
 
 export class JsonRpcProvider implements IProvider {
-  private rpcUrl: string;
-  private wsUrl: string;
   private client: WebSocket | undefined;
   private onNewBlockFn: OnNewBlockFn | undefined;
 
-  constructor() {
-    this.rpcUrl = "https://api.avax.network/ext/bc/C/rpc";
-    this.wsUrl = "wss://api.avax.network/ext/bc/C/ws";
-  }
+  constructor(private rpcUrl: string, private wsUrl: string) {}
 
   onNewBlock(fn: OnNewBlockFn) {
     this.onNewBlockFn = fn;
