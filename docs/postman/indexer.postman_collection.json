@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "e3a2312c-b243-4ebb-90ae-a206cc9a96d4",
+		"name": "indexer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3158191"
+	},
+	"item": [
+		{
+			"name": "/health-check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{srvUrl}}/health-check",
+					"host": [
+						"{{srvUrl}}"
+					],
+					"path": [
+						"health-check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{srvUrl}}/stats",
+					"host": [
+						"{{srvUrl}}"
+					],
+					"path": [
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/top-balances",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{srvUrl}}/top-balances",
+					"host": [
+						"{{srvUrl}}"
+					],
+					"path": [
+						"top-balances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/blocks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{srvUrl}}/blocks",
+					"host": [
+						"{{srvUrl}}"
+					],
+					"path": [
+						"blocks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/transactions/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{srvUrl}}/transactions/0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
+					"host": [
+						"{{srvUrl}}"
+					],
+					"path": [
+						"transactions",
+						"0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/transactions/top-values",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{srvUrl}}/transactions/top-values",
+					"host": [
+						"{{srvUrl}}"
+					],
+					"path": [
+						"transactions",
+						"top-values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/transactions/:id/count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{srvUrl}}/transactions/0xa4cee7d1af6adddd33e3b1cc680ab84fdf1b6d1d/count",
+					"host": [
+						"{{srvUrl}}"
+					],
+					"path": [
+						"transactions",
+						"0xa4cee7d1af6adddd33e3b1cc680ab84fdf1b6d1d",
+						"count"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

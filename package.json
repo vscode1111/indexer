@@ -1,0 +1,48 @@
+{
+  "name": "indexer",
+  "version": "0.0.1",
+  "description": "blockchain indexer service",
+  "scripts": {
+    "commit": "git-cz",
+    "dev": "env-cmd -f .env nodemon src/index.ts",
+    "format": "prettier --config ./.prettierrc.yml --write \"src/**/*.ts\"",
+    "build": "rimraf dist && tsc",
+    "start": "env-cmd -f .env node dist/index.js",
+    "test": "mocha -r ts-node/register 'src/**/*spec.ts'"
+  },
+  "author": "scub111 <scub111g@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/ws": "^8.5.4",
+    "axios": "^1.3.2",
+    "chai": "^4.3.7",
+    "chalk": "4.1.2",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "ethers": "^5.7.2",
+    "fastify": "^4.10.2",
+    "joi": "^17.7.0",
+    "mocha": "^10.2.0",
+    "node-schedule": "^2.1.1",
+    "pg": "^8.9.0",
+    "typeorm": "^0.3.12",
+    "typeorm-extension": "^2.4.2",
+    "ws": "^8.12.0"
+  },
+  "devDependencies": {
+    "@typechain/ethers-v5": "^10.1.1",
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "latest",
+    "@types/node-schedule": "^2.1.0",
+    "cross-env": "^7.0.3",
+    "env-cmd": "^10.1.0",
+    "fastify-tsconfig": "^1.0.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typechain": "^8.1.1",
+    "typescript": "^4.9.3"
+  }
+}
