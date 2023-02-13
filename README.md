@@ -32,17 +32,21 @@ Some port will be open after that
 ### List of endpoints
 #### Main
 GET http://localhost:3011/transactions/0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7 - list transactions made or received from a certain address sorted by blockNumber and transactionIndex
+
 GET http://localhost:3011/transactions/0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7/count - number of transactions made or received from a certain address
+
 GET http://localhost:3011/transactions/top-values - list of transactions sorted by value (amount of $AVAX moved)
+
 GET http://localhost:3011/top-balances - list of 100 addresses with largest balance that made or received a transaction
 
 #### Additional
 GET http://localhost:3011/health-check - just a test of the service
+
 GET http://localhost:3011/stats - statistics of synchronization
+
 GET http://localhost:3011/blocks - last nubmer of block in blockchain
 
-
-##### Posman config-file
+#### Posman config-file
 docs/postman
 
 Synchronization of 10000 blocks usually takes 10-20 minutes
