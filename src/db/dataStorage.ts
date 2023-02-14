@@ -142,13 +142,18 @@ export class DataStorage implements IInitialize {
   }
 
   async fetchTopValueBalances(): Promise<Transaction[]> {
-    // return this.dataSource
-    //   .createQueryBuilder(Balance, "balance")
-    //   .select("*")
-    //   .where('"value" > 0')
-    //   .addOrderBy("balance.value", "DESC")
-    //   .limit(100)
-    //   .getRawMany();
+    //Cost: 29067
+    // return this.dataSource.query(`
+    //   select b.address, b."blockNumber", b.value, b."createdAt", b."updatedAt" from balance b
+    //   where b."blockNumber" = (
+    //       select max("blockNumber") from balance gr
+    //       where b.address = gr.address
+    //   )
+    //   order by b.value desc
+    //   limit 100;
+    // `);
+
+    //Cost: 183
     return this.dataSource.query(`
       select gr.address, gr.blockNumber, b.value, b."createdAt", b."updatedAt" from (
         select address, max("blockNumber") blockNumber from balance
