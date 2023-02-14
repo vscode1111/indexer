@@ -44,7 +44,7 @@ GET http://localhost:3011/health-check - just a test of the service
 
 GET http://localhost:3011/stats - statistics of synchronization
 
-GET http://localhost:3011/blocks - last nubmer of block in blockchain
+GET http://localhost:3011/blocks - last block number in blockchain
 
 #### Posman config-file
 docs/postman
