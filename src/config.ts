@@ -35,7 +35,7 @@ function checkConfig(config: object) {
     const key = entry[0];
     const value = entry[1];
     if (value === undefined) {
-      throw new Error(`Please set your '${key}' in a .env file`);
+      throw new Error(`Please set your '${key}' in a env-file`);
     } else if (typeof value === "object") {
       checkConfig(value);
     }
