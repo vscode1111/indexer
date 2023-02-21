@@ -60,9 +60,9 @@ export class SyncEngine implements IInitialize {
       console.log(`Error #${this.statsData.errorCount}: ${printError(e)}`);
       if (attempts > 0) {
         console.log(`${attempts} attempts left to get transactions from block ${blockNumber}`);
-        this.tryToStore(blockNumber, type, attempts - 1);
+        await this.tryToStore(blockNumber, type, attempts - 1);
       } else {
-        console.log(`Couldn't to store block ${blockNumber}`);
+        console.log(`Couldn't store block ${blockNumber}`);
       }
     }
   }
